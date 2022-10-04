@@ -6,32 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <p id="p1"></p>
+  </body>
   <script>
-    let requestURL = "superheroes.json";
-    let request = new XMLHttpRequest(); //เปิดข้อมูลด้วยไลเบอรี่
-    request.onreadystatechange = function () {
-      if (request.readyState == 4 && request.status == 200) {
-        ExtractData(JSON.parse(request.responseText)); // แปลง String เป็น Object
-      }
+    let myObj = {
+      firstname: "John",
+      lastname: "Doe",
+      age: 30,
+      cars: ["Ford", "BMW", "Fiat"],
     };
-    request.open("GET", requestURL, true);
-    request.send();
-
-    function ExtractData(data) {
-      document.write(data.squadName + "<br>");
-      document.write(data.homeTown + "<br>");
-      document.write(data.secretBase + "<br>");
-      for (let member of data.members) {
-        document.write(
-          member.name + " " + member.age + " " + member.secretIdentity + "<br>"
-        );
-        document.write("<ol>");
-        for (let power of member.powers) {
-          document.write("<li>" + power + "</li>");
-        }
-        document.write("</ol>");
-      }
+    let text = "";
+    text += myObj.firstname + "<br>";
+    text += myObj.lastname + "<br>";
+    text += myObj.age + "<br>";
+    document.getElementById("p1").innerHTML = text;
+    for (let car of myObj.cars) {
+      document.write(car + "<br>");
+      //ถ้าใช้ document.write จะไม่สามารถแก้ไข้ style ได้
     }
   </script>
 </html>

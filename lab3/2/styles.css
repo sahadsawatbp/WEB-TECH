@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+body{
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-image: url("https://img.freepik.com/free-photo/girl-laying-surfboard-floating-open-sea-with-crystal-clear-water-maldives_181624-3822.jpg?w=2000");
+    background-size: cover;
+}
+
+.container{
+    margin-top: 5vw;
+    width: 700px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(245, 245, 245,.8);
+    border-radius: 10px;
+}
+
+form{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+

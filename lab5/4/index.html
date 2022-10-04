@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body, html{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        background: #f5f7fb;
+        font-family: 'Sarabun', sans-serif;
+    }#container{
+        display: flex;
+    }.header{
+        position: relative;
+        margin-top: 1vw;
+        margin-bottom: 8vw;
+        text-align: center;
+    }h1{
+        color: #2d64cf;
+        font-size: 40px;
+    }.header button{
+        position: relative;
+        margin-right: 20px;
+        margin-top: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        color: rgb(85, 85, 85);
+        font-size: 25px;
+        padding:0 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }.header button:after{
+        content: "";
+        position: absolute;
+        background-color: #2d64cf;
+        height: 3px;
+        width: 0%;
+        left:0;
+        bottom: -10px;
+        transition: 0.3s;
+    }.header button.active:after{
+        background-color: #2d64cf;
+        width: 100%;
+    }.header button:hover:after{
+       
+        width: 100%;
+    }.card{
+        position: relative;
+        width: 270px;
+        height: 390px;
+        background: white;
+        margin:0 20px 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 1px 8px 0 rgb(0 0 0 / 6%);
+        border-radius: 3px;
+    }.card img{
+        width: 85%;
+        position: relative;
+        top:-110px;
+        
+    }.card p{
+        position: relative;
+        color: #2d64cf;
+        top:-100px;
+        margin-top: 10px;
+    }.card h2{
+        position: relative;
+        top:-100px;
+        margin: 10px;
+        font-size: 18px;
+    }.card .button{
+        position: relative;
+        top:-80px;
+        width: 70%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        z-index: 999;
+        color:white;
+        background: #2d64cf;
+        pointer-events: auto;
+        font-weight: bolder;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+    }
+</style>
+<body>
+    <h1>ภาพยนตร์</h1>
+    <div class="header">
+        <button onclick="" class="active">กำลังฉาย</button>
+        <button href="" onclick="gigi()">เร็ว ๆ นี้</button>
+    </div>
+    <div id="container">
+       
+    </div>
+</body>
+<script>
+     let requestURL = "movies.json";
+    let request = new XMLHttpRequest(); //เปิดข้อมูลด้วยไลเบอรี่
+    request.onreadystatechange = function () {
+      if (request.readyState == 4 && request.status == 200) {
+        ExtractData(JSON.parse(request.responseText)); // แปลง String เป็น Object
+      }
+    };
+    request.open("GET", requestURL, true);
+    request.send();
+    ExtractData = (datas) => {
+        let cont = document.getElementById("container");
+        for(let data of datas.movies.showing){
+            let card = document.createElement("div");
+            card.setAttribute("class","card");
+            cont.appendChild(card);
+            let img = document.createElement("img");
+            img.setAttribute("src",data.poster);
+            card.appendChild(img);
+            cont.appendChild(card);
+            let release_date = document.createElement("p");
+            release_date.textContent = "วันที่เข้าฉาย : " + data.releasedate;
+            card.appendChild(release_date);
+            let movie_name = document.createElement("h2");
+            movie_name.textContent = data.title_th;
+            card.appendChild(movie_name);
+            let button = document.createElement("a");
+            button.setAttribute("class","button")
+            button.setAttribute("href","")
+            button.textContent = "เช็ครอบภาพยนตร์";
+            card.appendChild(button);
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+        body,html{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }img{
+            width: 200px;
+        }p{
+            font-size: 20px;
+            padding: 0;
+            margin-top: 10px;
+            color:white;
+            font-family: 'Kanit', sans-serif;
+        }.container{
+            margin: 20px 0 0 20px;
+            display:flex;
+            width: 600px;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid black;
+            padding: 0 20px 0 20px;
+            background-color: rgb(99, 97, 97);
+
+        }.left{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script>
+    let requestURL = "countries.json";
+    let request = new XMLHttpRequest(); //เปิดข้อมูลด้วยไลเบอรี่
+    request.onreadystatechange = function () {
+      if (request.readyState == 4 && request.status == 200) {
+        ExtractData(JSON.parse(request.responseText)); // แปลง String เป็น Object
+      }
+    };
+    request.open("GET", requestURL, true);
+    request.send();
+    ExtractData = (datas) => {
+        for(let data of datas){
+            let container = document.createElement("div");
+            container.setAttribute("class", "container");
+            let div_left = document.createElement("div");
+            div_left.setAttribute("class","left");
+            let div_right =document.createElement("img");
+            div_right.setAttribute("class","right");
+            div_right.setAttribute("src",data.flag)
+            let name = document.createElement("p");
+            name.innerHTML = "Name : "+ "<strong>"+data.name;
+            let capital = document.createElement("p");
+            capital.innerHTML = "Capital : "+ data.capital;
+            let population = document.createElement("p");
+            population.innerHTML = "Population : " + data.population;
+            let region = document.createElement("p");
+            region.innerHTML = "Region : " + data.region;
+            let location = document.createElement("p");
+            location.innerHTML = "Location : " + data.latlng[0] + " " + data.latlng[1];
+            let border = document.createElement("p");
+            border.innerHTML = "Borders : ";
+            for(let b of data.borders){
+                border.textContent += " "+b;
+            }
+           
+            div_left.appendChild(name);
+            div_left.appendChild(capital);
+            div_left.appendChild(population);
+            div_left.appendChild(region);
+            div_left.appendChild(location);
+            div_left.appendChild(border);
+            container.appendChild(div_left);
+            container.appendChild(div_right);
+            document.body.appendChild(container);
+        }
+    }
+</script>
+</html>

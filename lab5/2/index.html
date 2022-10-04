@@ -8,11 +8,21 @@
   </head>
   <style>
     body ,html{
+        height: 100vh;
         display: flex;
-        
+        flex-direction: column;
+        margin:20px
+    }input{
+        margin: 10px;
+    }h3{
+        margin: 10px;
+    }label{
+        font-weight: 600;
     }
   </style>
-  <body></body>
+  <body>
+    <h1>Quiz 1</h1>
+  </body>
   <script>
     let requestURL = "questionAnswerData.json";
     let request = new XMLHttpRequest(); //เปิดข้อมูลด้วยไลเบอรี่
@@ -23,8 +33,51 @@
     };
     request.open("GET", requestURL, true);
     request.send();
-    function ExtractData(data) {
-      for (let i = 0; i < data.length; i++) {}
+    function ExtractData(datas) {
+    var i = 1;
+      for (let data of datas) {
+        var head_text = document.createElement("h3");
+        var txt = document.createTextNode(i+") "+ data.question);
+        head_text.appendChild(txt);
+        document.body.appendChild(head_text);
+        var div = document.createElement("div");
+        var div2 = document.createElement("div");
+        var div3 = document.createElement("div");
+        var question_text = document.createElement("input");
+        question_text.setAttribute("type","radio");
+        var label1 = document.createElement("label")
+        var a_txt = document.createTextNode(data.answers.a);
+        var question_text2 = document.createElement("input");
+        question_text2.setAttribute("type","radio");
+        var label2 = document.createElement("label");
+        var b_txt = document.createTextNode(data.answers.b);
+        var question_text3 = document.createElement("input");
+        question_text3.setAttribute("type","radio");
+        var label3 = document.createElement("label");
+        var c_txt = document.createTextNode(data.answers.c);
+        if(data.answers.correct == 'a'){
+            question_text.setAttribute("checked","");
+        }else if(data.answers.correct == 'b'){
+            question_text2.setAttribute("checked","");
+        }
+        else if(data.answers.correct == 'c'){
+            question_text3.setAttribute("checked","");
+        }
+        label1.appendChild(a_txt);
+        label2.appendChild(b_txt)
+        label3.appendChild(c_txt)
+        div.appendChild(question_text);
+        div.appendChild(label1);
+        div2.appendChild(question_text2);
+        div2.appendChild(label2);
+        div3.appendChild(question_text3);
+        div3.appendChild(label3);
+        document.body.appendChild(div);
+        document.body.appendChild(div2);
+        document.body.appendChild(div3);
+        i++;
+      }
+      
     }
   </script>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <style>
+         body,html{ font-Size : 18px;
+            font-family: Arial, Helvetica, sans-serif;  
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;       
+        }  
+        table, th, td, tr{
+            padding: 5px;
+            text-align: center;
+            font-weight: bold;
+        }input, button{
+            padding: 5px;
+            margin-bottom: 15px;
+        }th{
+            background-color: rgb(219, 219, 219);
+        }
+    </style>    
+    <script src="myScript.js"></script>
+</head>
+<body>
+    <h1>ลงทะเบียนร่วมงาน</h1>
+    <div class="div1">
+        <input id="i1" placeholder="รหัสนักศึกษา">
+        <input id="i2" placeholder="ชื่อ">
+        <input id="i3" placeholder="นามสกุล">
+        <button onclick="InsertInfo()">ลงทะเบียน</button>
+    </div>
+    <table id="table0">
+            <tr>
+                <th>ลำดับที่</th>
+                <th>รหัสนักศึกษา</th>
+                <th>ชื่อ</th>
+                <th>นามสกุล</th>
+            </tr>
+           
+    </table>
+</body>    
+</html>

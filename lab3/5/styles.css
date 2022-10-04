@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+html, body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(235, 235, 235) !important;
+}
+
+.containers{
+    padding:2rem;
+    margin:20px;
+    width: 30%;
+    height: 60%;
+    font-weight: bold;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+}
+form{
+    font-size: 1.5rem;
+}
+.btn{
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.box{
+    font-family: 'Kanit', sans-serif;
+    margin-left: 5rem;
+    width: 30%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box h3{
+    margin-bottom: 2rem;
+    color:rgb(75, 75, 75);
+}
+
+.card{
+    width: 80%;
+    height: 50%;
+    border-radius: 30px;
+    box-shadow: 5px 12px  20px rgb(43, 42, 42);
+    background: url("https://img.wallpapersafari.com/desktop/1024/576/16/99/8b73lm.png");
+    background-size: cover;
+}
+
+.card h3{
+    margin:2rem 2rem 1rem;
+}
+
+.card p{
+    font-size: 1.4em;
+    margin: 0 2rem .5rem;
+    color:rgb(107, 107, 107);
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+      box-sizing:border-box;
+    }
+    .left {
+      background-color:#2196F3;
+      padding:20px;
+      float:left;
+      width:20%; 
+    }
+    .main {
+      background-color:#f1f1f1;
+      padding:20px;
+      float:left;
+      width:60%; 
+    }
+    .right {
+      background-color:#4CAF50;
+      padding:20px;
+      float:left;
+      width:20%; 
+    }
+    @media screen and (max-width:800px) {
+      .left, .main{
+        width:50%; 
+      }.right{
+        width: 100%;
+      } 
+      
+    @media screen and (max-width:600px) {
+      .left, .main, .right {
+        width:100%; 
+      }
+      
+    }
+
+    
+    }
+    h1 {
+        font-size:5vw; 
+    }
+    p {
+        font-size:5vh;
+    }
+    </style>
+<body>
+    <h2>Media Queries</h2>
+<p>Resize the browser window.</p>
+<p>Make sure you reach the breakpoint at 600px when resizing this frame.</p>
+<div class="left">
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora magnam atque laborum quidem, dolorum sunt facere, nesciunt et omnis culpa aut in adipisci cum provident reprehenderit rerum, temporibus labore quod?</p>
+</div>
+<div class="main">
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non sint exercitationem, hic, soluta praesentium provident velit unde consequuntur qui, aperiam cupiditate cumque. Repellat error assumenda reprehenderit iusto quidem. Culpa, molestiae!</p>
+</div>
+<div class="right">
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, pariatur ullam quisquam vero fugit ipsam eius eveniet debitis aliquam consequuntur iure sapiente perspiciatis et iusto! Ducimus labore hic doloremque aliquam!</p>
+</div>
+<h1>Responsive Text demo : VW unit</h1>
+<p>Text size scaling : VH unit.</p>
+</body>
+</html>

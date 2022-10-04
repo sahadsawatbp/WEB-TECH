@@ -1,0 +1,25 @@
+.container{
+    margin: 2rem;
+}
+.box{
+    width: 130px;
+    height:100px;
+    background-color: blue;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    transition: 2s;
+}
+
+.box p{
+    color:white;
+    font-size: 2em;
+    margin-left: 20px;
+}
+
+button{
+    width: 100px;
+    height: 50px;
+    font-size: 1rem;
+    margin-left: 2.7rem;
+}

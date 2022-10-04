@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Creation</title>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="containers">
+        <h1>Create your card</h1>
+        <form role="form" name="myForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="name" class="form-control" id="name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="phone" class="form-control" id="phone" placeholder="Enter phone number">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="company" class="form-control" id="company" placeholder="Enter company">
+            </div>
+        </form>
+        <button type="submit" class="btn btn-primary" onclick="createCard()">Create</button>
+    </div>
+    <div class="box">
+        <h3>your card here</h3 >
+        <div class="card">
+            <h3 id="p1"></h3>
+            <P id="p2"></P>
+            <P id="p3"></P>
+            <P id="p4"></P>
+        </div>
+    </div>
+</body>
+</html>
